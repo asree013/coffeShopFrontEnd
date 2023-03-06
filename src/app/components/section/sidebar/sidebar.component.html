@@ -1,0 +1,10 @@
+<input type="text" class="sidebarSearch" placeholder="Seaching ..." />
+<div class="menuSidebar">
+    <p *ngIf="loginStatus != 'ok' && loginStatus == null" class="sidebarItems" [routerLink]="['/login']"> login </p>
+    <p *ngIf="loginStatus != 'ok' && loginStatus == null" class="sidebarItems" [routerLink]="['/register']"> register </p>
+    <p class="sidebarItems"> menu3 </p>
+    <div *ngIf="loginStatus == 'ok' || loginStatus == null">
+        <p *ngIf="this.userStatus == 'admin'" class="sidebarItems" [routerLink]="['/admin']"> admin editer </p>
+    </div>
+</div>
+

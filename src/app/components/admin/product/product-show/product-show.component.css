@@ -1,0 +1,61 @@
+.productItem{
+    cursor: pointer;
+    transition: 300ms;
+    border-radius: 2px;
+    height: 100%;
+    padding: 8px;
+}
+.productItem:hover{
+    transform: scale(1.03);
+    border: 2px solid #e61b36;
+}
+.productImg{
+    width: 100%;
+    height: 12vw;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.cardShop{
+    display: flex;
+    justify-content: space-between;
+}
+.price{
+    font-size: 1.2vw;
+    color: #e61b36;
+}
+.fontSize{
+    font-size: 1vw;
+}
+.nameProduct{
+    font-size: 1.2vw;
+}
+
+@media only screen and (max-width: 600px) {
+    .productItem{
+        transition: 300ms;
+        border-radius: 2px;
+        width: 100%;
+        height: 100%;
+        padding: 8px;
+    }
+    .productItem:hover{
+        transform: scale(1.03);
+        border: 2px solid #e61b36;
+    }
+    .productImg{
+        width: 35vw;
+        height: 35vw;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .fontSize{
+        font-size: 10px;
+    }
+    .price{
+        font-size: 18px;
+        color: #e61b36;
+    }
+    .nameProduct{
+        font-size: 18px;
+    }
+}

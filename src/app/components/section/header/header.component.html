@@ -1,0 +1,19 @@
+
+<nav>
+  <div class="nav-container">
+    <a>
+      <img src="assets/images/logo.png" class="logoNav" />
+    </a>
+    <div class="navProfile">
+        <p *ngIf="islogin" class="navProfileName">{{userName}} {{lastName}}</p>
+        <p *ngIf="!islogin" class="navProfileName">BEST Coffe</p>
+      <div class="navProfileClass" *ngIf="islogin">
+        <img class="fas fa-cart-shopping" src="assets/images/icon/shopping-cart.png" alt="">
+        <div class="cartCout">
+            5
+        </div>
+        <div *ngIf="islogin"><img class="logout" (click)="logout()" src="assets/images/icon/log-out.png" alt=""></div>
+      </div>
+    </div>
+  </div>
+</nav>

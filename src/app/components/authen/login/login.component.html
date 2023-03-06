@@ -1,0 +1,34 @@
+<div class="modal">
+  <div class="container text-center">
+    <p class="x" (click)="this.router.navigate(['/product'])">x</p>
+    <form #loginForm="ngForm">
+      <div class="card">
+        <div class="row">
+          <div class="col">
+            <img class="img" src="assets/images/logo.png" alt="">
+          </div>
+          <p class="loginFont">Login</p>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input ngModel name="userName" type="text" placeholder="Username" class="input-Stlye" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input ngModel name="password" type="password" placeholder="Password" class="input-Stlye" />
+          </div>
+        </div>
+        <div class="row">
+          <h3 *ngIf="loginFail" class="loginFail">username OR Password Not Macth</h3>
+        </div>
+        <div class="row">
+          <div class="col button-flex">
+            <button class="btn btn-submit" (click)="loginSubmit(loginForm.value)">login</button>
+            <button class="btn btn-register" [routerLink]="['/register']">register</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

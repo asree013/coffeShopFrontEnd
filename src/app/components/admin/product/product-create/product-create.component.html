@@ -1,0 +1,49 @@
+<p>product-create works!</p>
+<div class="container text-center">
+    <div class="card">
+        <div class="row mt-3">
+            <div class="col">
+                <p>image Product</p>
+                <input type="file" placeholder="images">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <p>product name</p>
+                <input type="text" placeholder="name">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <p>product price</p>
+                <input type="text" placeholder="name">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <p>product stock</p>
+                <input type="text" placeholder="name">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <label>product catagory</label>
+                <select name="catagory" id="catagory" required>
+                    <option selected>เลื่อกปรพเภท</option>
+                    <option value="เมล็ดกาแฟ">เมล็ดกาแฟ</option>
+                    <option value="เครื่องชงกาแฟ">เครื่องชงกาแฟ</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <p>product detail</p>
+                <input type="text" placeholder="name">
+            </div>
+        </div>
+        <div>
+            <button (click)="this.location.back()">Cancel</button>
+            <button>Create Product</button>
+        </div>
+    </div>
+</div>

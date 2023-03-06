@@ -1,0 +1,23 @@
+.card-header {
+    padding: 1vw;
+    margin: 1.2vw 1.2vw;
+    border-radius: 12px;
+}
+.card-bd{
+    margin: 1.2vw 1vw;
+    cursor: pointer;
+    transition: 0.4s;
+    display: flex;
+    justify-content: space-between;
+}
+.card-bd:hover {
+    transform: scale(1.1);
+    background: linear-gradient(125deg, #e61b36, #9c1032);
+    color: aliceblue;
+    font-size: 1.5vw;
+}
+.img-icon {
+    height: 4vw;
+    width: 4vw;
+    margin-top: 8px;
+}

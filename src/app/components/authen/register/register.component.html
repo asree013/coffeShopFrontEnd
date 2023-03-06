@@ -1,0 +1,73 @@
+<div class="modal">
+  <div class="container text-center">
+    <p class="x" (click)="this.router.navigate(['/product'])">x</p>
+    <form #registerForm="ngForm" (submit)="registerValidate(registerForm)">
+      <div class="card">
+        <div class="row">
+          <div class="col">
+            <img class="img" src="assets/images/logo.png" alt="">
+          </div>
+          <p>register</p>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <input ngModel name="userName" type="text" placeholder="Username" class="input-Stlye" />
+            <p *ngIf="errUername" class="errComment"></p>
+          </div>
+          <div class="col-md-4">
+            <input ngModel name="password" type="text" placeholder="password" class="input-Stlye" />
+            <p *ngIf="errPass" class="errComment">password less than 8 word</p>
+          </div>
+          <div class="col-md-4">
+            <input ngModel name="confirmPassword" type="text" placeholder="confirm-password" class="input-Stlye" />
+            <p *ngIf="errComPass" class="errComment">password not match</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <input ngModel name="firstName" type="text" placeholder="firstName" class="input-Stlye" />
+            <p *ngIf="errFirsName" class="errComment">first name less than 10 word</p>
+          </div>
+          <div class="col-md-4">
+            <input ngModel name="lastName" type="text" placeholder="lastName" class="input-Stlye" />
+            <p *ngIf="errLastName" class="errComment">last name less than 10 word</p>
+          </div>
+          <div class="col-md-4">
+            <input ngModel name="phone" type="text" placeholder="phone" class="input-Stlye" />
+            <p *ngIf="errPhone" class="errComment">phone number less than 10 word</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <input ngModel name="idCard" type="text" placeholder="idCard" class="input-Stlye" />
+            <p *ngIf="errIdCard" class="errComment">id card less than 10 word OR id card can used</p>
+          </div>
+          <div class="col-md-6">
+            <input ngModel name="mail" type="text" placeholder="Mail" class="input-Stlye" />
+            <p *ngIf="errMail" class="errComment">id card less than 10 word OR id card can used</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input ngModel name="address" type="text" placeholder="address" class="input-Stlye-address" />
+            <p *ngIf="errAddress" class="errComment">you don input data</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input ngModel name="image" type="file" placeholder="image" accept="image/*" (change)="onPrevieImage($event)"  />
+          </div>
+          <div class="col" *ngIf="imagePreview">
+            <img class="img-preview" src="{{imagePreview}}" alt="">
+          </div>
+        </div>
+        <h2 style="color: red;" *ngIf="ErrValidate" >Username OR Mail is USED!!!</h2>
+        <div class="row">
+          <div class="col button-flex">
+            <button class="btn btn-submit" type="submit">register</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

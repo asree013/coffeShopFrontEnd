@@ -1,0 +1,12 @@
+
+  <div class="productItem" *ngFor="let item of product" (click)="gotoProductDetail(item.id)">
+    <p hidden>{{ item.id }}</p>
+    <img class="productImg" src="{{baseIMG}}{{ item.image }}" alt="" />
+    <p class="nameProduct">{{ item.name  | slice: 0: 30}}</p>
+    <div class="cardShop">
+      <p class="price">{{ item.price | currency: '฿' }}</p>
+      <p class="fontSize">จำนวน: {{ item.stock }}</p>
+    </div>
+  </div>
+
+

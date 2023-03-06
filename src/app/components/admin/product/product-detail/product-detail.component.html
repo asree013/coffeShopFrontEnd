@@ -1,0 +1,27 @@
+<div class="modal">
+  <div (click)="goBack()" class="modal-bg"></div>
+  <div class="modal-page">
+    <div class="detail">
+        <h2>Detail</h2>
+        <div class="btn-control">
+            <button (click)="goBack()" class="btn close">close</button>
+            <button class="btn btn-buy" (click)="addCard(productItem)">
+                Add Cart
+            </button>
+        </div>
+    </div>
+      <br>
+      <div class="modaldect-content">
+        <p hidden>{{productItem.id}}</p>
+          <img class="modaldec-image" src="{{productItem.image}}" alt="">
+          <div class="modal-detail">
+              <b class="productName">{{productItem.name}}</b>
+              <p class="productPrice">ราคา {{productItem.price | currency : '฿'}}</p>
+              <p class="productCatagory">catagory {{productItem.catagory}}</p>
+              <p class="productStock">stock {{productItem.stock}}</p>
+              <p class="productDetail">{{productItem.detail}}</p>
+          </div>
+      </div>
+  </div>
+
+</div>
