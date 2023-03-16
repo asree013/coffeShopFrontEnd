@@ -4,6 +4,7 @@ import { ProductService } from 'src/app/services/product/product.service';
 import { environment } from 'src/environments/environment';
 import { Location } from '@angular/common';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-product',
@@ -16,6 +17,7 @@ export class HomeProductComponent implements OnInit {
   constructor(
     private productService:ProductService,
     public location:Location,
+    private router:Router,
   ) { }
 
   ngOnInit(): void {
@@ -42,7 +44,7 @@ export class HomeProductComponent implements OnInit {
   }
 
   editProducts(id: string){
-    alert(id)
+    this.router.navigate(['/product/edit/', id])
   }
   deleteProduct(id: string) {
     Swal.fire({
@@ -55,11 +57,13 @@ export class HomeProductComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-        )
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: `Deleted Data`,
+          showConfirmButton: false,
+          timer: 1500
+        })
         this.productService.deleteProduct(id).subscribe(
           async result => {
             if(result) {

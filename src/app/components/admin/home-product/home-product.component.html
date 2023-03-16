@@ -1,7 +1,7 @@
 <div class="container aling-items-center">
   <div class="card cardSupper">
     <div class="headButton">
-      <button class="btn" (click)="this.location.back()">goback</button>
+      <button class="btn" [routerLink]="['/admin']">goback</button>
       <button class="btnCreate" [routerLink]="['/product/create']">create</button>
     </div>
     <input class="inputSerching" type="text" placeholder="Sherching Data" />

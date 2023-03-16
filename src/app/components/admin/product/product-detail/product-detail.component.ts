@@ -1,10 +1,11 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ShopCart } from 'src/app/models/shopCart.model';
+import { AddcartService } from 'src/app/services/addcart/addcart.service';
 import { ProductService } from 'src/app/services/product/product.service';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
-
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -13,34 +14,43 @@ import Swal from 'sweetalert2';
 export class ProductDetailComponent implements OnInit {
 
   productItem: any = []
-  // baseImage: string = `${environment.baseURL}`
+  idProduct: string = ''
   constructor(
     private router: Router,
     private activateRout: ActivatedRoute,
     private location: Location,
     private productService: ProductService,
+    private addcartService: AddcartService,
   ) { }
 
   ngOnInit(): void {
     this.activateRout.params.subscribe(params => {
-      let id = params['id']
-      this.productService.oneProduct(id).subscribe((result) => {
+      this.idProduct = params['id']
+      this.productService.oneProduct(this.idProduct).subscribe((result) => {
         this.productItem = result
         this.productItem.image = `${environment.baseURL}images/${result.image}`
       })
     })
   }
 
-  addCard(productId: any){
+  addCard(ProductId: string){
     let loginStatus = localStorage.getItem(environment.loginStatus)
+    let idUser = localStorage.getItem(environment.idCardUser)
     if(loginStatus === 'ok'){
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: `เพิ่ม ${productId.name} ในตะกร้าสอนค้าแล้ว`,
-        showConfirmButton: false,
-        timer: 3000
-      })
+      const addProduct = new ShopCart()
+      addProduct.amount = 1
+      addProduct.cardStatus = 'รอชำระเงิน'
+      addProduct.userId = `${idUser}`
+      addProduct.productId = ProductId
+      this.addcartService.addCart(addProduct).subscribe(
+        result => {
+          this.router.navigate(['/product/cart/home'])
+        },
+        err => {
+          console.log(err);
+
+        }
+      )
     }
     else{
       Swal.fire({

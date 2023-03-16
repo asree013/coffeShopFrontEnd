@@ -1,0 +1,72 @@
+<div class="modal">
+  <div class="container text-center">
+    <p class="x" [routerLink]="['/product']" >x</p>
+    <form #registerFormEdit="ngForm" (submit)="editProfile(registerFormEdit.value)" >
+      <div class="card">
+        <div class="row">
+          <div class="col">
+            <img class="img" src="assets/images/logo.png" alt="">
+          </div>
+          <p>register</p>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <input [(ngModel)]="profile.userName" name="userName" type="text" placeholder="Username" class="input-Stlye" />
+            <p *ngIf="errUername" class="errComment"></p>
+          </div>
+          <div class="col-md-4">
+            <input [(ngModel)]="profile.password" name="password" type="text" placeholder="password" class="input-Stlye" />
+            <p *ngIf="errPass" class="errComment">password less than 8 word</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <input [(ngModel)]="profile.firstName" name="firstName" type="text" placeholder="firstName" class="input-Stlye" />
+            <p *ngIf="errFirsName" class="errComment">first name less than 10 word</p>
+          </div>
+          <div class="col-md-4">
+            <input [(ngModel)]="profile.lastName" name="lastName" type="text" placeholder="lastName" class="input-Stlye" />
+            <p *ngIf="errLastName" class="errComment">last name less than 10 word</p>
+          </div>
+          <div class="col-md-4">
+            <input [(ngModel)]="profile.phone" name="phone" type="text" placeholder="phone" class="input-Stlye" />
+            <p *ngIf="errPhone" class="errComment">phone number less than 10 word</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <input [(ngModel)]="profile.idCard" name="idCard" type="text" placeholder="idCard" class="input-Stlye" />
+            <p *ngIf="errIdCard" class="errComment">id card less than 10 word OR id card can used</p>
+          </div>
+          <div class="col-md-6">
+            <input [(ngModel)]="profile.mail" name="mail" type="text" placeholder="Mail" class="input-Stlye" />
+            <p *ngIf="errMail" class="errComment">id card less than 10 word OR id card can used</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input [(ngModel)]="profile.address" name="address" type="text" placeholder="address" class="input-Stlye-address" />
+            <p *ngIf="errAddress" class="errComment">you don input data</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input [(ngModel)]="profile.image" name="image" type="file" placeholder="image" accept="image/*" (change)="onPrevieImage($event)"  />
+          </div>
+          <div class="col">
+            <img *ngIf="imagePreview != null" class="img-preview" src="{{imagePreview}}" alt="">
+            <img *ngIf="imagePreview == null && profile.image != null" class="img-preview" src="{{profile.image}}" alt="">
+          </div>
+        </div>
+        <h2 style="color: red;" *ngIf="ErrValidate" >Username OR Mail is USED!!!</h2>
+        <div class="row">
+          <div class="col button-flex">
+            <button class="btn btn-submit" type="submit">register</button>
+            <button class="btn cancel" type="button" (click)="this.location.back()">cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

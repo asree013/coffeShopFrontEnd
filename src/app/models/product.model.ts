@@ -5,9 +5,9 @@ export class Product {
     stock: number = 0;
     catagory: string = '';
     detail: string = '';
-    image: string = '';
-    createdAt!: Date ;
-    updatedAt!: Date;
+    image: any;
+    createdAt: Date | undefined;
+    updatedAt: Date | undefined;
 }
 
 export interface ProductElement {

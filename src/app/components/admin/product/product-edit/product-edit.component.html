@@ -1,1 +1,70 @@
-<p>product-edit works!</p>
+<div class="container text-center">
+  <div class="card">
+    <form #productFormEdit="ngForm">
+      <h2>Edit Product</h2>
+      <!-- <div hidden [(ngModel)]="product.id" name="id"></div> -->
+      <div class="row rowImg">
+        <img *ngIf="imagePreview == null && product.image != null" class="imgPreview" src="{{baseImg}}{{ product.image }}" alt="" />
+        <img *ngIf="imagePreview != null" class="imgPreview" src="{{ imagePreview }}" alt="" />
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <p>image Product</p>
+          <input
+            [(ngModel)]="product.image"
+            name="image"
+            type="file"
+            placeholder="images"
+            accept="image/*"
+            (change)="previewImage($event)"
+          />
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Name</span>
+            <input [(ngModel)]="product.name" name="name" type="text" class="form-control" placeholder="Name Product">
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Price</span>
+            <input  [(ngModel)]="product.price" name="price" type="number" class="form-control" placeholder="Price Product">
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Stock</span>
+            <input  [(ngModel)]="product.stock" name="stock" type="number" class="form-control" placeholder="Stock Product">
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <label>product catagory</label>
+          <select class="selectInput" [(ngModel)]="product.catagory" name="catagory" >
+            <option value="เมล็ดกาแฟ">เมล็ดกาแฟ</option>
+            <option value="เครื่องชงกาแฟ">เครื่องชงกาแฟ</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <div class="input-group">
+            <span class="input-group-text">With textarea</span>
+            <textarea  [(ngModel)]="product.detail" name="detail" class="form-control" aria-label="With textarea"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="formacthBTN">
+        <button class="btn" (click)="this.location.back()">Cancel</button>
+        <button class="btnCreate" (click)="editData(productFormEdit.value)">Edit Product</button>
+      </div>
+    </form>
+  </div>
+</div>

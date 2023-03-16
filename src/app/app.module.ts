@@ -20,6 +20,13 @@ import { ProductDetailComponent } from './components/admin/product/product-detai
 import { HomeAdminComponent } from './components/admin/home-admin/home-admin.component';
 import { ProductAdminComponent } from './components/admin/product/product-admin/product-admin.component';
 import { HomeProductComponent } from './components/admin/home-product/home-product.component';
+import { ProfileAdminComponent } from './components/profiles/profile-admin/profile-admin.component';
+import { ProfileHomeComponent } from './components/profiles/profile-home/profile-home.component';
+import { ProfileEditComponent } from './components/profiles/profile-edit/profile-edit.component';
+import { CardHomeComponent } from './components/shp-card/card-home/card-home.component';
+import { CardAdminComponent } from './components/shp-card/card-admin/card-admin.component';
+import { CardEditComponent } from './components/shp-card/card-edit/card-edit.component';
+import { CardAddComponent } from './components/shp-card/card-add/card-add.component';
 
 @NgModule({
     declarations: [
@@ -38,6 +45,13 @@ import { HomeProductComponent } from './components/admin/home-product/home-produ
         HomeAdminComponent,
         ProductAdminComponent,
         HomeProductComponent,
+        ProfileAdminComponent,
+        ProfileHomeComponent,
+        ProfileEditComponent,
+        CardHomeComponent,
+        CardAdminComponent,
+        CardEditComponent,
+        CardAddComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],

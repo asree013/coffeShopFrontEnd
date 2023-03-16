@@ -1,0 +1,32 @@
+<div class="modal" >
+  <div class="modal-bg"></div>
+  <div class="modal-page">
+      <div class="buying">
+          <h2>My Cart</h2>
+          <div class="btn-control">
+              <button class="btn" [routerLink]="['/product']">Cancel</button>
+              <button button class="btn btn-buy">Buy</button>
+          </div>
+      </div>
+      <br>
+      <div class="cart-list" *ngFor="let item of myCart; let i = index">
+          <div class="cart-list-items" >
+              <div class="cartlist-left">
+                <p>{{i + 1}}</p>
+                  <img src="{{baseImg}}{{item.product.image}}" alt="">
+                  <div class="cartlist-detail">
+                      <p style="font-size: 1.5vw;">{{item.product.name}}</p>
+                      <p style="font-size: 1.2vw;">{{item.product.price | currency : '฿'}}</p>
+                  </div>
+              </div>
+              <div class="cartlist-right">
+                  <input type="number" class="amount" value="{{item.amount}}" />
+                  <br>
+                  <p (click)="deletCart(item.id)" class="btnc"><img class="equl" src="assets/images/icon/equl.png" alt=""></p>
+              </div>
+          </div>
+      </div>
+      <h3>ราคารวม </h3>
+  </div>
+
+</div>

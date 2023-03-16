@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@1,500&family=Shantell+Sans&display=swap');
+.imgInTable{
+    height: 100px;
+    width: 100px;
+}
+.imgInTable:hover{
+    border: 5px solid #e61b36;
+}
+table{
+    text-align: center;
+    justify-content: center;
+    margin: 10px, 10px;
+    transition: 0.3s;
+}
+tr{
+    transition: 0.3s;
+    cursor: pointer;
+}
+tr:hover{
+    transform: scale(1.05);
+}
+.cardSupper{
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 20px;
+}
+.headButton{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.btn{
+    background: rgb(233, 228, 228);
+    color: red;
+    font-family: 'Shantell Sans', cursive;
+    transition: 0.4s;
+}
+.btn:hover{
+    transform: scale(1.1);
+    background: linear-gradient(125deg, #b7a9a9, #000000);
+    color: aliceblue;
+}
+.btnCreate{
+    background: linear-gradient(125deg, #e61b36, #9c1032);
+    color: aliceblue;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 80px;
+    transition: 0.4s;
+}
+.btnCreate:hover{
+    background: linear-gradient(125deg, #1e08eb, #9c1032);
+    transform: scale(1.1);
+}
+.inputSerching{
+    height: 50px;
+    width: 50%;
+    border: 2px solid transparent;
+    outline: none;
+    background: #f2f2f2;
+    border-radius: 12px;
+    margin: 10px 20px;
+    color: aliceblue;
+    transition: 0.3s;
+    font-size: 18px;
+}
+.inputSerching:focus{
+    border: 2px solid #e61b36;
+    transform: scale(1.05);
+}
+.imgEditer{
+    height: 35px;
+    width: 35px;
+    margin: 50% 7%;
+    transition: 0.4s;
+}
+.imgEditer:hover{
+    transform: scale(1.2);
+    border: 2px solid #e61b36;
+    border-radius: 30px;
+    height: 50px;
+    width: 50px;
+}
+@media only screen and (max-width: 600px) {
+    .headButton{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .btn{
+        background: rgb(233, 228, 228);
+        color: red;
+        font-family: 'Shantell Sans', cursive;
+        transition: 0.4s;
+        height: 50px;
+    }
+    .btnCreate{
+        background: linear-gradient(125deg, #e61b36, #9c1032);
+        color: aliceblue;
+        border: none;
+        border-radius: 5px;
+        height: 50px;
+        width: 100%;
+        transition: 0.4s;
+        margin-top: 15px;
+    }
+    .inputSerching{
+        height: 50px;
+        width: 87%;
+        border: 2px solid transparent;
+        outline: none;
+        background: #f2f2f2;
+        border-radius: 12px;
+        margin: 10px 20px;
+        color: rgb(0, 0, 0);
+        transition: 0.3s;
+        font-size: 18px;
+    }
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+    .imgInTable{
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+    }
+    .imgEditer{
+        height: 30px;
+        width: 30px;
+        margin: 50% 7%;
+    }
+    .imgEditer:hover{
+        transform: scale(1.1);
+        border: 2px solid #e61b36;
+        border-radius: 30px;
+        height: 40px;
+        width: 40px;
+    }
+}

@@ -1,0 +1,59 @@
+<div class="container aling-items-center">
+  <div class="card cardSupper">
+    <h1>Profiel All</h1>
+    <div class="headButton">
+      <button class="btn" [routerLink]="['/admin']">goback</button>
+      <button class="btnCreate" [routerLink]="['/register']">create profile</button>
+    </div>
+    <input class="inputSerching" type="text" placeholder="Sherching Data" />
+    <div class="table-wrapper">
+      <table class="table table-striped fl-table" >
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">image</th>
+            <th scope="col">userName</th>
+            <th scope="col">password</th>
+            <th scope="col">firstName</th>
+            <th scope="col">lastName</th>
+            <th scope="col">address</th>
+            <th scope="col">mail</th>
+            <th scope="col">phone</th>
+            <th scope="col">idCard</th>
+            <th scope="col">status</th>
+            <th scope="col">createdAt</th>
+            <th scope="col">updatedAt</th>
+            <th scope="col">action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of profileAll; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td>
+              <img
+                class="imgInTable"
+                src="{{baseImg}}{{item.image}}"
+                alt=""
+              />
+            </td>
+            <td class="col-md-2">{{item.userName}}</td>
+            <td class="col-md-1">{{item.password}}</td>
+            <td class="col-md-1">{{item.firstName}}</td>
+            <td class="col-md-1">{{item.lastName}}</td>
+            <td class="col-md-1">{{item.address}}</td>
+            <td class="col-md-1">{{item.mail}}</td>
+            <td class="col-md-1">{{item.phone}}</td>
+            <td class="col-md-1">{{item.idCard}}</td>
+            <td class="col-md-1">{{item.role}}</td>
+            <td class="col-md-1">{{item.createdAt}}</td>
+            <td class="col-md-1">{{item.updatedAt}}</td>
+            <th class="col-md-2">
+              <img class="imgEditer" (click)="editProfile(item.id)" src="assets/images/icon/edit.png" alt="" >
+              <img class="imgEditer" (click)="deleteProfile(item.id)" src="assets/images/icon/delete.png" alt="" >
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

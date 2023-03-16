@@ -1,49 +1,66 @@
-<p>product-create works!</p>
 <div class="container text-center">
-    <div class="card">
-        <div class="row mt-3">
-            <div class="col">
-                <p>image Product</p>
-                <input type="file" placeholder="images">
-            </div>
+  <div class="card">
+    <form #productForm="ngForm">
+      <h2>Create Product</h2>
+      <div class="row rowImg">
+        <img *ngIf="imagePreview" class="imgPreview" src="{{ imagePreview }}" alt="" />
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <p>image Product</p>
+          <input
+            ngModel
+            name="image"
+            type="file"
+            placeholder="images"
+            accept="image/*"
+            (change)="previewImage($event)"
+          />
         </div>
-        <div class="row mt-3">
-            <div class="col">
-                <p>product name</p>
-                <input type="text" placeholder="name">
-            </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Name</span>
+            <input ngModel name="name" type="text" class="form-control" placeholder="Name Product">
+          </div>
         </div>
-        <div class="row mt-3">
-            <div class="col">
-                <p>product price</p>
-                <input type="text" placeholder="name">
-            </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Price</span>
+            <input  ngModel name="price" type="number" class="form-control" placeholder="Price Product">
+          </div>
         </div>
-        <div class="row mt-3">
-            <div class="col">
-                <p>product stock</p>
-                <input type="text" placeholder="name">
-            </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Stock</span>
+            <input  ngModel name="stock" type="number" class="form-control" placeholder="Stock Product">
+          </div>
         </div>
-        <div class="row mt-3">
-            <div class="col">
-                <label>product catagory</label>
-                <select name="catagory" id="catagory" required>
-                    <option selected>เลื่อกปรพเภท</option>
-                    <option value="เมล็ดกาแฟ">เมล็ดกาแฟ</option>
-                    <option value="เครื่องชงกาแฟ">เครื่องชงกาแฟ</option>
-                </select>
-            </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <label>product catagory</label>
+          <select class="selectInput" ngModel name="catagory" id="catagory" required>
+            <option value="เมล็ดกาแฟ">เมล็ดกาแฟ</option>
+            <option value="เครื่องชงกาแฟ">เครื่องชงกาแฟ</option>
+          </select>
         </div>
-        <div class="row mt-3">
-            <div class="col">
-                <p>product detail</p>
-                <input type="text" placeholder="name">
-            </div>
+      </div>
+      <div class="row mt-3">
+        <div class="input-group">
+          <span class="input-group-text">With textarea</span>
+          <textarea  ngModel name="detail" class="form-control" aria-label="With textarea"></textarea>
         </div>
-        <div>
-            <button (click)="this.location.back()">Cancel</button>
-            <button>Create Product</button>
-        </div>
-    </div>
+      </div>
+      <div class="formacthBTN">
+        <button class="btn" (click)="this.location.back()">Cancel</button>
+        <button class="btnCreate" (click)="createProduct(productForm)">Create Product</button>
+      </div>
+    </form>
+  </div>
 </div>

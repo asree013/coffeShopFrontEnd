@@ -1,0 +1,78 @@
+.formacthBTN{
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0px;
+}
+.imgPreview{
+height: 200px;
+width: 180px;
+object-fit: cover;
+}
+.rowImg{
+display: flex;
+justify-content: center;
+}
+.input-group{
+margin: 5px 30%;
+width: 40%;
+}
+.input{
+border: 1px solid #c8bebe;
+border-radius: 8px;
+transition: 0.4s;
+text-align: center;
+}
+.input:hover{
+transform: scale(1.1);
+border: 2px solid #1655bb;
+}
+.selectInput{
+border-radius: 5px;
+margin: 5px 5px;
+transition: 0.4s;
+}
+.btn{
+background: #ede9e9;
+color: rgb(0, 0, 0);
+transition: 0.4s;
+width: 200px;
+}
+.btn:hover{
+transform: scale(1.15);
+}
+.btnCreate{
+border: none;
+border-radius: 5px;
+padding: 10px;
+background: linear-gradient(125deg, #e61b36, #9c1032);
+color: aliceblue;
+transition: 0.4s;
+width: 200px;
+}
+.btnCreate:hover{
+transform: scale(1.15);
+}
+.product-detail{
+  height: 200px;
+  width: 40%;
+  overflow: scroll;
+}
+@media only screen and (max-width: 600px) {
+.input-group{
+  margin: 5px 10%;
+  width: 80%;
+}
+.formacthBTN{
+  display: flex;
+  flex-direction: column;
+  margin: 5px 15px;
+}
+.btn{
+  width: 100%;
+  margin: 5px 0px;
+}
+.btnCreate{
+  width: 100%;
+  margin: 5px 0px;
+}
+}

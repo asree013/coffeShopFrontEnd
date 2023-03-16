@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/authen/login.service';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
+import { AddcartService } from 'src/app/services/addcart/addcart.service';
+import { ShopCartInterface } from 'src/app/models/shopCart.model';
 
 @Component({
   selector: 'app-header',
@@ -9,14 +11,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  userName: any = []
-  lastName: any = []
+  cartItem:number = 0
+  userName: any
+  lastName: any
+  images:any
+  baseImg = `${environment.baseURL}images/`
   islogin = false
 
   constructor(
     public loginService: LoginService,
     private router: Router,
+    private addCart: AddcartService
   ) { }
 
   ngOnInit(): void {
@@ -32,6 +37,12 @@ export class HeaderComponent implements OnInit {
         (result) => {
           this.userName = result.firstName
           this.lastName = result.lastName
+          this.images = result.image
+          this.addCart.getShopCartById(`${idUser}`).subscribe(
+            result => {
+              if(result) this.cartItem = result.length
+            }
+          )
         }
       )
     }
